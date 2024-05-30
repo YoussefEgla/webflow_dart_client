@@ -1,3 +1,7 @@
+## 0.1.4
+
+- Fix: Type cast error for Seo title
+
 ## 0.1.3
 
 - Fix: Type cast error for Seo and OpenGraph
