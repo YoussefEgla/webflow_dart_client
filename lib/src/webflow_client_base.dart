@@ -6,12 +6,7 @@ import 'package:webflow_client/src/sites_api.dart';
 
 class WebflowClient {
   late Client _client;
-  final _registry = <String, dynamic>{
-    'sites': SitesApi,
-    'pages': PagesApi,
-    'assets': AssetsApi,
-    'cms': CMSApi,
-  };
+  final Map<String, dynamic> _registry = {};
 
   WebflowClient(String siteToken) {
     final baseUrl = 'https://api.webflow.com/v2';
@@ -19,9 +14,10 @@ class WebflowClient {
 
     _client = Client(baseUrl, headers);
 
-    for (final key in _registry.keys) {
-      _registry[key] = _registry[key](_client);
-    }
+    _registry['sites'] = SitesApi(_client);
+    _registry['pages'] = PagesApi(_client);
+    _registry['assets'] = AssetsApi(_client);
+    _registry['cms'] = CMSApi(_client);
   }
 
   SitesApi get sites => _registry['sites'];

@@ -1,3 +1,4 @@
-## 0.1.1
+## 0.1.2
 
-- Fix: static analysis issues
+- Fix: client initialization
+- Test: add test for client initialization
