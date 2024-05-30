@@ -9,7 +9,7 @@ class Page {
   final String? parentId;
   final String? collectionId;
   final String title;
-  final String slug;
+  final String? slug;
   final DateTime createdOn;
   final DateTime lastUpdated;
   final bool archived;
@@ -24,7 +24,7 @@ class Page {
     this.parentId,
     this.collectionId,
     required this.title,
-    required this.slug,
+    this.slug,
     required this.createdOn,
     required this.lastUpdated,
     required this.archived,
@@ -45,8 +45,8 @@ class Seo {
   final String? description;
 
   Seo({
-    required this.title,
-    required this.description,
+    this.title,
+    this.description,
   });
 
   factory Seo.fromJson(Map<String, dynamic> json) => _$SeoFromJson(json);

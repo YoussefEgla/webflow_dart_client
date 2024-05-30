@@ -12,7 +12,7 @@ Page _$PageFromJson(Map<String, dynamic> json) => Page(
       parentId: json['parentId'] as String?,
       collectionId: json['collectionId'] as String?,
       title: json['title'] as String,
-      slug: json['slug'] as String,
+      slug: json['slug'] as String?,
       createdOn: DateTime.parse(json['createdOn'] as String),
       lastUpdated: DateTime.parse(json['lastUpdated'] as String),
       archived: json['archived'] as bool,
@@ -39,8 +39,8 @@ Map<String, dynamic> _$PageToJson(Page instance) => <String, dynamic>{
     };
 
 Seo _$SeoFromJson(Map<String, dynamic> json) => Seo(
-      title: json['title'] as String,
-      description: json['description'] as String,
+      title: json['title'] as String?,
+      description: json['description'] as String?,
     );
 
 Map<String, dynamic> _$SeoToJson(Seo instance) => <String, dynamic>{
@@ -49,9 +49,9 @@ Map<String, dynamic> _$SeoToJson(Seo instance) => <String, dynamic>{
     };
 
 OpenGraph _$OpenGraphFromJson(Map<String, dynamic> json) => OpenGraph(
-      title: json['title'] as String,
+      title: json['title'] as String?,
       titleCopied: json['titleCopied'] as bool,
-      description: json['description'] as String,
+      description: json['description'] as String?,
       descriptionCopied: json['descriptionCopied'] as bool,
     );
 
