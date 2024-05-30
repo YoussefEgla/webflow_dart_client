@@ -41,8 +41,8 @@ class Page {
 
 @JsonSerializable()
 class Seo {
-  final String title;
-  final String description;
+  final String? title;
+  final String? description;
 
   Seo({
     required this.title,
@@ -56,9 +56,9 @@ class Seo {
 
 @JsonSerializable()
 class OpenGraph {
-  final String title;
+  final String? title;
   final bool titleCopied;
-  final String description;
+  final String? description;
   final bool descriptionCopied;
 
   OpenGraph({
