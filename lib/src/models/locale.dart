@@ -45,7 +45,7 @@ class Locales {
       _$LocalesFromJson(json);
 
   Map<String, dynamic> toJson() => _$LocalesToJson(this);
-  
+
   @override
   String toString() => jsonEncode(toJson());
 }

@@ -18,7 +18,7 @@ class CustomDomain {
       _$CustomDomainFromJson(json);
 
   Map<String, dynamic> toJson() => _$CustomDomainToJson(this);
-  
+
   @override
   String toString() => jsonEncode(toJson());
 }

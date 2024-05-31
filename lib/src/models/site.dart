@@ -37,7 +37,7 @@ class Site {
   factory Site.fromJson(Map<String, dynamic> json) => _$SiteFromJson(json);
 
   Map<String, dynamic> toJson() => _$SiteToJson(this);
-  
+
   @override
   String toString() => jsonEncode(toJson());
 }

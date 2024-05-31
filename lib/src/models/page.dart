@@ -80,7 +80,7 @@ class OpenGraph {
       _$OpenGraphFromJson(json);
 
   Map<String, dynamic> toJson() => _$OpenGraphToJson(this);
-  
+
   @override
   String toString() => jsonEncode(toJson());
 }

@@ -33,7 +33,7 @@ class Asset {
   factory Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);
 
   Map<String, dynamic> toJson() => _$AssetToJson(this);
-  
+
   @override
   String toString() => jsonEncode(toJson());
 }

@@ -137,7 +137,7 @@ class FieldData {
       _$FieldDataFromJson(json);
 
   Map<String, dynamic> toJson() => _$FieldDataToJson(this);
-  
+
   @override
   String toString() => jsonEncode(toJson());
 }
