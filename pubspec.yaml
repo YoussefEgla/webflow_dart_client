@@ -4,7 +4,7 @@ version: 0.1.4
 repository: https://github.com/YoussefEgla/webflow_dart_client
 
 environment:
-  sdk: ^3.3.4
+  sdk: ^3.3.0
 
 # Add regular dependencies here.
 dependencies:
