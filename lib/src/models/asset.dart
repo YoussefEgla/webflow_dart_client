@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'asset.g.dart';
@@ -31,6 +33,9 @@ class Asset {
   factory Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);
 
   Map<String, dynamic> toJson() => _$AssetToJson(this);
+  
+  @override
+  String toString() => jsonEncode(toJson());
 }
 
 @JsonSerializable()
@@ -59,4 +64,7 @@ class Variant {
       _$VariantFromJson(json);
 
   Map<String, dynamic> toJson() => _$VariantToJson(this);
+
+  @override
+  String toString() => jsonEncode(toJson());
 }

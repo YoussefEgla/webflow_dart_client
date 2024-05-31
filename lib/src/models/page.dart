@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'page.g.dart';
@@ -37,6 +39,9 @@ class Page {
   factory Page.fromJson(Map<String, dynamic> json) => _$PageFromJson(json);
 
   Map<String, dynamic> toJson() => _$PageToJson(this);
+
+  @override
+  String toString() => jsonEncode(toJson());
 }
 
 @JsonSerializable()
@@ -52,6 +57,9 @@ class Seo {
   factory Seo.fromJson(Map<String, dynamic> json) => _$SeoFromJson(json);
 
   Map<String, dynamic> toJson() => _$SeoToJson(this);
+
+  @override
+  String toString() => jsonEncode(toJson());
 }
 
 @JsonSerializable()
@@ -72,4 +80,7 @@ class OpenGraph {
       _$OpenGraphFromJson(json);
 
   Map<String, dynamic> toJson() => _$OpenGraphToJson(this);
+  
+  @override
+  String toString() => jsonEncode(toJson());
 }

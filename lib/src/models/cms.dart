@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'cms.g.dart';
@@ -24,6 +26,9 @@ class Collection {
       _$CollectionFromJson(json);
 
   Map<String, dynamic> toJson() => _$CollectionToJson(this);
+
+  @override
+  String toString() => jsonEncode(toJson());
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -45,6 +50,9 @@ class CollectionDetails extends Collection {
 
   @override
   Map<String, dynamic> toJson() => _$CollectionDetailsToJson(this);
+
+  @override
+  String toString() => jsonEncode(toJson());
 }
 
 @JsonSerializable()
@@ -70,6 +78,9 @@ class Field {
   factory Field.fromJson(Map<String, dynamic> json) => _$FieldFromJson(json);
 
   Map<String, dynamic> toJson() => _$FieldToJson(this);
+
+  @override
+  String toString() => jsonEncode(toJson());
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -95,24 +106,38 @@ class Item {
   factory Item.fromJson(Map<String, dynamic> json) => _$ItemFromJson(json);
 
   Map<String, dynamic> toJson() => _$ItemToJson(this);
+
+  @override
+  String toString() => jsonEncode(toJson());
 }
 
 @JsonSerializable()
 class FieldData {
-  final String url;
-  final String name;
-  final String department;
-  final String slug;
+  final String? url;
+  final String? name;
+  final String? department;
+  final String? slug;
+  final String? thumbnailImage;
+  final String? mainImage;
+  final String? postSummary;
+  final bool? featured;
 
   FieldData({
-    required this.url,
-    required this.name,
-    required this.department,
-    required this.slug,
+    this.url,
+    this.name,
+    this.department,
+    this.slug,
+    this.thumbnailImage,
+    this.mainImage,
+    this.postSummary,
+    this.featured,
   });
 
   factory FieldData.fromJson(Map<String, dynamic> json) =>
       _$FieldDataFromJson(json);
 
   Map<String, dynamic> toJson() => _$FieldDataToJson(this);
+  
+  @override
+  String toString() => jsonEncode(toJson());
 }

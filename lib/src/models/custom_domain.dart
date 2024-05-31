@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'custom_domain.g.dart';
@@ -16,4 +18,7 @@ class CustomDomain {
       _$CustomDomainFromJson(json);
 
   Map<String, dynamic> toJson() => _$CustomDomainToJson(this);
+  
+  @override
+  String toString() => jsonEncode(toJson());
 }
