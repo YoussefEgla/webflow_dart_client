@@ -1,6 +1,6 @@
 name: webflow_client
 description: Webflow API v2 client for dart and flutter, uses light weight http package to make requests.
-version: 0.1.5
+version: 0.1.6
 repository: https://github.com/YoussefEgla/webflow_dart_client
 
 environment:
