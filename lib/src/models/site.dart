@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:json_annotation/json_annotation.dart';
 import 'package:webflow_client/src/models/custom_domain.dart';
 import 'package:webflow_client/src/models/locale.dart';
@@ -35,4 +37,7 @@ class Site {
   factory Site.fromJson(Map<String, dynamic> json) => _$SiteFromJson(json);
 
   Map<String, dynamic> toJson() => _$SiteToJson(this);
+  
+  @override
+  String toString() => jsonEncode(toJson());
 }

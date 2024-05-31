@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'locale.g.dart';
@@ -25,6 +27,8 @@ class Locale {
   factory Locale.fromJson(Map<String, dynamic> json) => _$LocaleFromJson(json);
 
   Map<String, dynamic> toJson() => _$LocaleToJson(this);
+  @override
+  String toString() => jsonEncode(toJson());
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -41,4 +45,7 @@ class Locales {
       _$LocalesFromJson(json);
 
   Map<String, dynamic> toJson() => _$LocalesToJson(this);
+  
+  @override
+  String toString() => jsonEncode(toJson());
 }

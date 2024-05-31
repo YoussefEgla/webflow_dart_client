@@ -22,4 +22,7 @@ class ListResponse<T> {
           Pagination.fromJson(json['pagination'] as Map<String, dynamic>),
     );
   }
+  
+  @override
+  String toString() => 'items: $items, pagination: $pagination';
 }

@@ -90,10 +90,14 @@ Map<String, dynamic> _$ItemToJson(Item instance) => <String, dynamic>{
     };
 
 FieldData _$FieldDataFromJson(Map<String, dynamic> json) => FieldData(
-      url: json['url'] as String,
-      name: json['name'] as String,
-      department: json['department'] as String,
-      slug: json['slug'] as String,
+      url: json['url'] as String?,
+      name: json['name'] as String?,
+      department: json['department'] as String?,
+      slug: json['slug'] as String?,
+      thumbnailImage: json['thumbnail-image']['url'] as String?,
+      mainImage: json['main-image']['url'] as String?,
+      postSummary: json['post-summary'] as String?,
+      featured: json['featured'] as bool,
     );
 
 Map<String, dynamic> _$FieldDataToJson(FieldData instance) => <String, dynamic>{
@@ -101,4 +105,8 @@ Map<String, dynamic> _$FieldDataToJson(FieldData instance) => <String, dynamic>{
       'name': instance.name,
       'department': instance.department,
       'slug': instance.slug,
+      'thumbnailImage': instance.thumbnailImage,
+      'mainImage': instance.mainImage,
+      'postSummary': instance.postSummary,
+      'featured': instance.featured,
     };

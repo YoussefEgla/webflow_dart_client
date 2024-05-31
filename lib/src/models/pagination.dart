@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'pagination.g.dart';
@@ -18,4 +20,7 @@ class Pagination {
       _$PaginationFromJson(json);
 
   Map<String, dynamic> toJson() => _$PaginationToJson(this);
+  
+  @override
+  String toString() => jsonEncode(toJson());
 }
