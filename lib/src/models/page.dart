@@ -70,9 +70,9 @@ class OpenGraph {
   final bool descriptionCopied;
 
   OpenGraph({
-    required this.title,
+    this.title,
     required this.titleCopied,
-    required this.description,
+    this.description,
     required this.descriptionCopied,
   });
 
