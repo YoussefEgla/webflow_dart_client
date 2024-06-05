@@ -1,3 +1,11 @@
+## 0.1.7
+
+- improve sdk support
+
+## 0.1.6
+
+- Fix: added missing collection item fields
+
 ## 0.1.5
 
 - Fix: models optional fields
