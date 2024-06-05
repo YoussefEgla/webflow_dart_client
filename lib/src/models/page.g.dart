@@ -7,19 +7,27 @@ part of 'page.dart';
 // **************************************************************************
 
 Page _$PageFromJson(Map<String, dynamic> json) => Page(
-      id: json['id'] as String,
-      siteId: json['siteId'] as String,
+      id: json['id'] as String?,
+      siteId: json['siteId'] as String?,
       parentId: json['parentId'] as String?,
       collectionId: json['collectionId'] as String?,
-      title: json['title'] as String,
+      title: json['title'] as String?,
       slug: json['slug'] as String?,
-      createdOn: DateTime.parse(json['createdOn'] as String),
-      lastUpdated: DateTime.parse(json['lastUpdated'] as String),
-      archived: json['archived'] as bool,
-      draft: json['draft'] as bool,
-      canBranch: json['canBranch'] as bool,
-      seo: Seo.fromJson(json['seo'] as Map<String, dynamic>),
-      openGraph: OpenGraph.fromJson(json['openGraph'] as Map<String, dynamic>),
+      createdOn: json['createdOn'] == null
+          ? null
+          : DateTime.parse(json['createdOn'] as String),
+      lastUpdated: json['lastUpdated'] == null
+          ? null
+          : DateTime.parse(json['lastUpdated'] as String),
+      archived: json['archived'] as bool?,
+      draft: json['draft'] as bool?,
+      canBranch: json['canBranch'] as bool?,
+      seo: json['seo'] == null
+          ? null
+          : Seo.fromJson(json['seo'] as Map<String, dynamic>),
+      openGraph: json['openGraph'] == null
+          ? null
+          : OpenGraph.fromJson(json['openGraph'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$PageToJson(Page instance) => <String, dynamic>{
@@ -29,13 +37,13 @@ Map<String, dynamic> _$PageToJson(Page instance) => <String, dynamic>{
       'collectionId': instance.collectionId,
       'title': instance.title,
       'slug': instance.slug,
-      'createdOn': instance.createdOn.toIso8601String(),
-      'lastUpdated': instance.lastUpdated.toIso8601String(),
+      'createdOn': instance.createdOn?.toIso8601String(),
+      'lastUpdated': instance.lastUpdated?.toIso8601String(),
       'archived': instance.archived,
       'draft': instance.draft,
       'canBranch': instance.canBranch,
-      'seo': instance.seo.toJson(),
-      'openGraph': instance.openGraph.toJson(),
+      'seo': instance.seo?.toJson(),
+      'openGraph': instance.openGraph?.toJson(),
     };
 
 Seo _$SeoFromJson(Map<String, dynamic> json) => Seo(
@@ -50,9 +58,9 @@ Map<String, dynamic> _$SeoToJson(Seo instance) => <String, dynamic>{
 
 OpenGraph _$OpenGraphFromJson(Map<String, dynamic> json) => OpenGraph(
       title: json['title'] as String?,
-      titleCopied: json['titleCopied'] as bool,
+      titleCopied: json['titleCopied'] as bool?,
       description: json['description'] as String?,
-      descriptionCopied: json['descriptionCopied'] as bool,
+      descriptionCopied: json['descriptionCopied'] as bool?,
     );
 
 Map<String, dynamic> _$OpenGraphToJson(OpenGraph instance) => <String, dynamic>{

@@ -7,19 +7,19 @@ part 'cms.g.dart';
 @JsonSerializable()
 class Collection {
   final String id;
-  final String displayName;
-  final String singularName;
-  final String slug;
-  final DateTime createdOn;
-  final DateTime lastUpdated;
+  final String? displayName;
+  final String? singularName;
+  final String? slug;
+  final DateTime? createdOn;
+  final DateTime? lastUpdated;
 
   Collection({
     required this.id,
-    required this.displayName,
-    required this.singularName,
-    required this.slug,
-    required this.createdOn,
-    required this.lastUpdated,
+    this.displayName,
+    this.singularName,
+    this.slug,
+    this.createdOn,
+    this.lastUpdated,
   });
 
   factory Collection.fromJson(Map<String, dynamic> json) =>
@@ -37,11 +37,11 @@ class CollectionDetails extends Collection {
 
   CollectionDetails({
     required super.id,
-    required super.displayName,
-    required super.singularName,
-    required super.slug,
-    required super.createdOn,
-    required super.lastUpdated,
+    super.displayName,
+    super.singularName,
+    super.slug,
+    super.createdOn,
+    super.lastUpdated,
     required this.fields,
   });
 
@@ -58,19 +58,19 @@ class CollectionDetails extends Collection {
 @JsonSerializable()
 class Field {
   final String id;
-  final bool isEditable;
+  final bool? isEditable;
   final bool isRequired;
   final String type;
-  final String slug;
+  final String? slug;
   final String displayName;
   final String? helpText;
 
   Field({
     required this.id,
-    required this.isEditable,
+    this.isEditable,
     required this.isRequired,
     required this.type,
-    required this.slug,
+    this.slug,
     required this.displayName,
     this.helpText,
   });
@@ -85,22 +85,22 @@ class Field {
 
 @JsonSerializable(explicitToJson: true)
 class Item {
-  final String id;
-  final DateTime lastPublished;
-  final DateTime lastUpdated;
-  final DateTime createdOn;
+  final String? id;
+  final DateTime? lastPublished;
+  final DateTime? lastUpdated;
+  final DateTime? createdOn;
   final bool isArchived;
   final bool isDraft;
-  final FieldData fieldData;
+  final FieldData? fieldData;
 
   Item({
     required this.id,
-    required this.lastPublished,
-    required this.lastUpdated,
-    required this.createdOn,
-    required this.isArchived,
-    required this.isDraft,
-    required this.fieldData,
+    this.lastPublished,
+    this.lastUpdated,
+    this.createdOn,
+    this.isArchived = false,
+    this.isDraft = false,
+    this.fieldData,
   });
 
   factory Item.fromJson(Map<String, dynamic> json) => _$ItemFromJson(json);
@@ -137,7 +137,7 @@ class FieldData {
       _$FieldDataFromJson(json);
 
   Map<String, dynamic> toJson() => _$FieldDataToJson(this);
-  
+
   @override
   String toString() => jsonEncode(toJson());
 }

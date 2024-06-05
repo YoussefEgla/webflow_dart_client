@@ -8,7 +8,7 @@ part of 'custom_domain.dart';
 
 CustomDomain _$CustomDomainFromJson(Map<String, dynamic> json) => CustomDomain(
       id: json['id'] as String,
-      url: json['url'] as String,
+      url: json['url'] as String?,
     );
 
 Map<String, dynamic> _$CustomDomainToJson(CustomDomain instance) =>

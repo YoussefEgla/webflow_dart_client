@@ -42,7 +42,7 @@ class TextContent {
       _$TextContentFromJson(json);
 
   Map<String, dynamic> toJson() => _$TextContentToJson(this);
-  
+
   @override
   String toString() => jsonEncode(toJson());
 }

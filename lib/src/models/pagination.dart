@@ -20,7 +20,7 @@ class Pagination {
       _$PaginationFromJson(json);
 
   Map<String, dynamic> toJson() => _$PaginationToJson(this);
-  
+
   @override
   String toString() => jsonEncode(toJson());
 }
