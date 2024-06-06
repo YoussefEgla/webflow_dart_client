@@ -1,3 +1,7 @@
+## 0.1.8
+
+- Fix: update variables nullables specs
+
 ## 0.1.7
 
 - improve sdk support
