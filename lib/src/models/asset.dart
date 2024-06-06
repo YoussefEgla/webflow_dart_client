@@ -6,28 +6,28 @@ part 'asset.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class Asset {
-  final String id;
-  final String originalFileName;
-  final String displayName;
-  final String contentType;
-  final int size;
-  final String siteId;
-  final DateTime createdOn;
-  final DateTime lastUpdated;
-  final String hostedUrl;
+  final String? id;
+  final String? originalFileName;
+  final String? displayName;
+  final String? contentType;
+  final int? size;
+  final String? siteId;
+  final DateTime? createdOn;
+  final DateTime? lastUpdated;
+  final String? hostedUrl;
   final List<Variant> variants;
 
   Asset({
-    required this.id,
-    required this.originalFileName,
-    required this.displayName,
-    required this.contentType,
-    required this.size,
-    required this.siteId,
-    required this.createdOn,
-    required this.lastUpdated,
-    required this.hostedUrl,
-    required this.variants,
+    this.id,
+    this.originalFileName,
+    this.displayName,
+    this.contentType,
+    this.size,
+    this.siteId,
+    this.createdOn,
+    this.lastUpdated,
+    this.hostedUrl,
+    this.variants = const <Variant>[],
   });
 
   factory Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);
@@ -40,23 +40,23 @@ class Asset {
 
 @JsonSerializable()
 class Variant {
-  final String hostedUrl;
-  final String originalFileName;
-  final String displayName;
-  final String format;
-  final int width;
+  final String? hostedUrl;
+  final String? originalFileName;
+  final String? displayName;
+  final String? format;
+  final int? width;
   final int? height;
-  final int quality;
+  final int? quality;
   final String? error;
 
   Variant({
-    required this.hostedUrl,
-    required this.originalFileName,
-    required this.displayName,
-    required this.format,
-    required this.width,
+    this.hostedUrl,
+    this.originalFileName,
+    this.displayName,
+    this.format,
+    this.width,
     this.height,
-    required this.quality,
+    this.quality,
     this.error,
   });
 

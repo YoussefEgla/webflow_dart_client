@@ -6,34 +6,34 @@ part 'page.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class Page {
-  final String id;
-  final String siteId;
+  final String? id;
+  final String? siteId;
   final String? parentId;
   final String? collectionId;
-  final String title;
+  final String? title;
   final String? slug;
-  final DateTime createdOn;
-  final DateTime lastUpdated;
-  final bool archived;
-  final bool draft;
-  final bool canBranch;
-  final Seo seo;
-  final OpenGraph openGraph;
+  final DateTime? createdOn;
+  final DateTime? lastUpdated;
+  final bool? archived;
+  final bool? draft;
+  final bool? canBranch;
+  final Seo? seo;
+  final OpenGraph? openGraph;
 
   Page({
-    required this.id,
-    required this.siteId,
+    this.id,
+    this.siteId,
     this.parentId,
     this.collectionId,
-    required this.title,
+    this.title,
     this.slug,
-    required this.createdOn,
-    required this.lastUpdated,
-    required this.archived,
-    required this.draft,
-    required this.canBranch,
-    required this.seo,
-    required this.openGraph,
+    this.createdOn,
+    this.lastUpdated,
+    this.archived,
+    this.draft,
+    this.canBranch,
+    this.seo,
+    this.openGraph,
   });
 
   factory Page.fromJson(Map<String, dynamic> json) => _$PageFromJson(json);
@@ -65,15 +65,15 @@ class Seo {
 @JsonSerializable()
 class OpenGraph {
   final String? title;
-  final bool titleCopied;
+  final bool? titleCopied;
   final String? description;
-  final bool descriptionCopied;
+  final bool? descriptionCopied;
 
   OpenGraph({
     this.title,
-    required this.titleCopied,
+    this.titleCopied,
     this.description,
-    required this.descriptionCopied,
+    this.descriptionCopied,
   });
 
   factory OpenGraph.fromJson(Map<String, dynamic> json) =>
